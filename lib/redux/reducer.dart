@@ -2,7 +2,7 @@ import 'package:redux_example/redux/action.dart';
 import 'package:redux_example/redux/state.dart';
 
 ///前の状態を受け取り新しいものを作るという副作用のない関数になります。（例：Aを入れたら毎回Bが返る）
-///要約するとstore.dispatch(AddName(text)),などで受け取ったパラメーターを個々のクラスで処理して、
+///要約するとstore.dispatch(AddName(text)),などで受け取ったパラメーターを下記のクラスで処理して、
 ///新しい状態で返してあげる
 
 AppState appReducer(AppState prevState, action) {
