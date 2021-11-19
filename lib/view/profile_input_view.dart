@@ -57,7 +57,7 @@ class ProfileInputView extends StatelessWidget {
                     },
                     autovalidateMode: AutovalidateMode.onUserInteraction,
                     validator: (text) {
-                      if (text!.length > 0 && text.length < 6) return null;
+                      if (text!.length > 0 && text.length < 7) return null;
                       return store.state.errorName;
                     },
                   );
@@ -168,12 +168,13 @@ class ProfileInputView extends StatelessWidget {
                       '登録',
                     ),
                     onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => ProfileConfirmationView(),
-                        ),
-                      );
+                      if (store.state.errorName!.isEmpty)
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => ProfileConfirmationView(),
+                          ),
+                        );
                     },
                   ),
                 ),
